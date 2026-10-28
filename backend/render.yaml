@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: mcip-backend
+    env: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.8
+      - key: AI_DEMO_MODE
+        value: "false"
+      - key: XAI_API_KEY
+        sync: false
+      - key: GROK_MODEL
+        value: grok-2-1212
+      - key: GROK_VISION_MODEL
+        value: grok-2-vision-1212
+      - key: DATABASE_URL
+        fromDatabase:
+          name: mcip-db
+          property: connectionString
+
+databases:
+  - name: mcip-db
+    plan: free

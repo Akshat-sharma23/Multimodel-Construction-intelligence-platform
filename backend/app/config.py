@@ -24,7 +24,8 @@ class Settings(BaseSettings):
         "http://127.0.0.1:5173",
         "http://localhost:3000",
         "http://127.0.0.1:3000",
-        "https://mcip-frontend.vercel.app"
+        "https://mcip-frontend.vercel.app",
+        "https://mcip-frontend-lxvxvoi0s-akshatsharma2.vercel.app",
     ]
     
     # File Upload Controls
